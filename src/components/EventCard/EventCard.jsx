@@ -9,6 +9,7 @@ function EventCard(props) {
         <div className="event">
             <EventControls price={props.price}/>
             <div className="info">
+                { props.popular && <div className="popular">popular</div> }
                 <h4>{ props.name }</h4>
                 <div>
                     <i className="material-icons md-18">monetization_on</i>

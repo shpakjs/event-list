@@ -10,7 +10,6 @@ function EventInfo(props) {
             <Carousel>
                 { props.photos.map(src => <div key={new Date()}><img src={src}/></div>)}
             </Carousel>
-            { props.popular && <div className="popular">popular</div> }
             <img src={props.photos[0]} alt="activity"/>
         </div>
   );
