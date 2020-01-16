@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Event from '../EventCard/EventCard';
 import Filters from '../Filters/Filters';
 
-import s from './EventsList';
+import './EventsList.scss';
 
 function EventsList(props) {
     const [events, setEvents] = useState(Object.values(props.events));
@@ -21,7 +21,7 @@ function EventsList(props) {
         setEvents(filteredArr);
     }
     return (
-        <div className={s.events_list}>
+        <div className="events_list">
             <Filters changeFilters={changeFilters}/>
             {
                 events.map( event => {

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import './Filters.scss';
 
 function Filters(props) {
     const [popularity, setPopularity] = useState(false);
@@ -9,10 +10,12 @@ function Filters(props) {
     }, [popularity, category]);
 
     return (
-        <div>
-            <input type="checkbox" id="popular" checked={popularity} onChange={(e) => setPopularity(e.target.checked)} />
-            <label htmlFor="popular" >show popular</label>
-            <select value={category} onChange={(e)=> setCategory(e.target.value)} >
+        <div className="filters">
+            <div className="filter">
+                <input type="checkbox" id="popular" checked={popularity} onChange={(e) => setPopularity(e.target.checked)} />
+                <label htmlFor="popular" >show popular</label>
+            </div>
+            <select className="filter" value={category} onChange={(e)=> setCategory(e.target.value)} >
                 <option value=""></option>
                 <option value="family">family</option>
                 <option value="music">music</option>

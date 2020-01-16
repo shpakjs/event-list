@@ -1,0 +1,61 @@
+@import '../../App';
+
+h4 {
+    font-size: $big-text-size;
+    margin: 0 0 5px;
+    color: $base-text-color;
+}
+
+i {
+    color: $accent-color;
+    vertical-align: middle;
+    margin: 0 5px;
+}
+.event {
+    display: flex;
+    box-sizing: border-box;
+    margin: 1% 0;
+    height: 200px;
+    background: $base-color;
+    .info {
+        position: relative;
+        width: 75%;
+        margin-left: 1%;
+        padding: 10px;
+        overflow: hidden;
+        border: $border;
+        border-radius: $border-radius;
+        text-align: right;
+        
+        .description {
+            height: 70px;
+            overflow: hidden;
+            line-height: 18px;
+        }
+        .additional {
+            display: inline;
+            margin-left: 50px;
+        }
+    }
+    
+}
+
+
+.small_text {
+    font-size: $small-text-size;
+    color: $light-text-color;
+}
+
+@include phone {
+    .event {
+        flex-wrap: wrap;
+        height: auto;
+        margin-bottom: 25px;
+        .description {
+            height: auto;
+        }
+        .info {
+            width: 60%;
+        }
+    }
+}

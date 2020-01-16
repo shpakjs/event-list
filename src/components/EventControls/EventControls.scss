@@ -1,0 +1,37 @@
+@import '../../App';
+
+.controls {
+    width: 30%;
+    margin: 0 1%;
+    padding: 15px 0;
+    font-size: 23px;
+    text-align: center;
+    border: $border;
+    border-radius: $border-radius;
+}
+button {
+    width: 30px;
+    height: 30px;
+    margin: 20px 10px;
+    border: none;
+    background: $accent-color;
+    color: $base-color;
+    text-align: center;
+    border-radius: $border-radius;
+    &[disabled]{
+        background: $accent-color + 60;
+    }
+}
+
+@include phone {
+    .controls {
+        width: 100%;
+        order: 3;
+        display: flex;
+        justify-content: space-around;
+        button {
+            margin: 0px 20px;
+        }
+    }
+
+}

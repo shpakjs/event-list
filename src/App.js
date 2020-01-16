@@ -1,6 +1,6 @@
 import React from 'react';
 import EventsList from './components/EventsList/EventsList';
-import './App.css';
+import './App.scss';
 
 const appData = require('./dataset.json');
 

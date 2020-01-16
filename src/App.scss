@@ -1,0 +1,20 @@
+$base-color: rgb(255, 255, 255);
+$base-text-color: rgb(68, 68, 68);
+$accent-color: rgb(224, 28, 61);
+$light-text-color: rgb(150, 150, 150);
+
+$big-text-size: 20px;
+$base-text-size: 16px;
+$small-text-size: 15px;
+
+$transition: all .3s ease-in-out;
+$border: 1px solid rgb(200, 200, 200);
+$border-radius: 5px;
+
+$phone-max-width: 768px;
+
+@mixin phone {
+  @media (max-width: $phone-max-width) {
+    @content;
+  }
+}

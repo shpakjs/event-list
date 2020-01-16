@@ -1,15 +1,17 @@
 import React, { useState } from 'react';
-import s from './EventControls.module.scss';
+import './EventControls.scss';
 
 function EventControls(props) {
   let [count, setCount] = useState(0);
   return (
-    <div className={s.controls}>
-        TICKETCS
-        <button onClick={() => setCount(count+1)}> + </button>
-        <div>{count}</div>
-        <button onClick={() => setCount(count+1)}> - </button>
-        TOTAL: { count * props.price}
+    <div className="controls">
+        <h4>TICKETCS</h4>
+        <div className="count">
+          <button onClick={() => setCount(count-1)} disabled={count === 0}> - </button>
+          {count}
+          <button onClick={() => setCount(count+1)} > + </button>
+        </div>
+        <div>TOTAL: { count * props.price} $</div>
     </div>
   );
 }

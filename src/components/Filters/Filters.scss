@@ -1,0 +1,11 @@
+@import '../../App';
+
+.filters {
+    text-align: left;
+}
+.filter {
+    display: inline;
+    margin: 10px;
+    min-width: 150px;
+    font-size: $big-text-size;
+}
