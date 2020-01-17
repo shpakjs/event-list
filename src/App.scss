@@ -12,6 +12,11 @@ $border-radius: 5px;
 
 $phone-max-width: 768px;
 
+.App {
+  min-height: 100vh;
+  background: #eee;
+}
+
 @mixin phone {
   @media (max-width: $phone-max-width) {
     @content;
