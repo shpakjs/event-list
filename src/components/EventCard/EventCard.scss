@@ -15,7 +15,6 @@ i {
     display: flex;
     box-sizing: border-box;
     margin: 1% 0;
-    height: 200px;
     background: $base-color;
     .info {
         position: relative;
@@ -23,7 +22,6 @@ i {
         margin-left: 1%;
         padding: 10px;
         overflow: hidden;
-        border: $border;
         border-radius: $border-radius;
         text-align: right;
         .popular {
@@ -34,12 +32,6 @@ i {
             background: $accent-color;
             color: $base-color;
             border-radius: $border-radius;
-
-        }
-        .description {
-            height: 70px;
-            overflow: hidden;
-            line-height: 18px;
         }
         .additional {
             display: inline;

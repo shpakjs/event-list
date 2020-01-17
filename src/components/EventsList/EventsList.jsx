@@ -6,8 +6,9 @@ import './EventsList.scss';
 
 function EventsList(props) {
     const [events, setEvents] = useState(Object.values(props.events));
+    const [eventsShowed, setEventsShowed] = useState(2);
 
-    const changeFilters = ({category, popularity}) => {
+    const changeFilters = ({category, popularity, ascedingPrice, eventsShowed}) => {
         let filteredArr = Object.values(props.events)
             .filter( event => {
                 if(category){
@@ -16,19 +17,23 @@ function EventsList(props) {
                         : event.category.includes(category);
                 }
                 return popularity ? event.popular : event;
-                    
             });
-        setEvents(filteredArr);
+        let sortedArr = filteredArr.sort((eventA, eventB) => {
+            return ascedingPrice === "true" ? eventA.price - eventB.price :  eventB.price - eventA.price;
+        });
+
+        setEvents(sortedArr);
     }
     return (
         <div className="events_list">
-            <Filters changeFilters={changeFilters}/>
+            <Filters changeFilters={changeFilters} events = {Object.values(props.events)}/>
             {
-                events.map( event => {
+                events.slice(0, eventsShowed).map( event => {
                     return <Event key={event.id} {...event} />
                 })
             }
-            
+            <span>Showed {eventsShowed > events.length ? events.length : eventsShowed} of { events.length } activities</span>
+            { eventsShowed < events.length && <button className="more" onClick={() => setEventsShowed(eventsShowed + 1)}>Show more</button> }
         </div>
     );
 }
