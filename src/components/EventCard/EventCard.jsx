@@ -22,7 +22,7 @@ function EventCard(props) {
                 </div>
                 <div className="small_text additional">
                     <i className="material-icons md-18">event</i>
-                    { props.dates.join('-') }
+                    { props.dates[0] }
                 </div>
                 <div className="small_text additional">{ props.category.join(',') } </div>
             </div>
